@@ -14,7 +14,7 @@ Currently:
 |`tower_username`|""|yes|Admin User on the Ansible Tower Server.||
 |`tower_password`|""|yes|Tower Admin User's password on the Ansible Tower Server.  This should be stored in an Ansible Vault at vars/tower-secrets.yml or elsewhere and called from a parent playbook.||
 |`tower_oauthtoken`|""|yes|Tower Admin User's token on the Ansible Tower Server.  This should be stored in an Ansible Vault at or elsewhere and called from a parent playbook.||
-|`tower_organizations`|`see below`|yes|Data structure describing your orgainzation or orgainzations Described below.||
+|`organizations`|`see below`|yes|Data structure describing your orgainzation or orgainzations Described below.||
 
 ### Secure Logging Variables
 The following Variables compliment each other. 
@@ -46,7 +46,7 @@ tower_genie_organizations_secure_logging defaults to the value of tower_genie_se
 ```json
 ---
 {
-    "tower_organizations": [
+    "organizations": [
       {
         "name": "Default",
         "description": "This is the Default Group"
@@ -66,7 +66,7 @@ tower_genie_organizations_secure_logging defaults to the value of tower_genie_se
 #### Ymal Example
 ```yaml
 ---
-tower_organizations:
+organizations:
 - name: Default
   description: This is the Default Group
 - name: Automation Group
@@ -115,7 +115,7 @@ tower_organizations:
       include_role: 
         name: ../..
       vars:
-        tower_organizations: "{{ organizations_json.tower_organizations }}"
+        organizations: "{{ organizations_json.organizations }}"
 ```
 ## License
 [MIT](LICENSE)

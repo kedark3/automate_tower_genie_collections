@@ -36,12 +36,12 @@
     - name: Import JSON
       include_vars:
         file: "json/templates.json"
-        name: templates_json
+        name: templates
 
     - name: Add Templates
       include_role: 
         name: ../..
       vars:
-        tower_templates: "{{ templates_json.tower_templates }}"
+        templates: "{{ templates.templates }}"
 
 

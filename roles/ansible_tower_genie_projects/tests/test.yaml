@@ -37,6 +37,6 @@
       include_role: 
         name: ../..
       vars:
-        tower_projects: "{{ projects_json.tower_projects }}"
+        projects: "{{ projects_json.projects }}"
 
 
